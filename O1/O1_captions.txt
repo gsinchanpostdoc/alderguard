@@ -1,0 +1,11 @@
+Figure 1. Objective 1 — Equilibrium prevalence, dominant attractors, and multistability.
+(A) Stable-presence probability of the three non-degraded equilibrium classes across the Latin Hypercube parameter sample, with bootstrap 95% confidence intervals. (B) Dominant-attractor probability after annual-map iteration from the coexistence initial condition. (C) Probability of each stable-set combination; the inset reports the multistable-sample fraction. Here x0* denotes the canopy-only equilibrium, x1* the parasitoid-free equilibrium, and x2* the coexistence equilibrium.
+
+Figure 2. Objective 1 — Baseline fixed points and equilibrium-level performance.
+(A) Baseline fixed points in the (A*, F*) plane, where A* is the annual recruiting larval cohort density and F* is adult parasitoid density. Filled points are locally stable and open points are unstable. (B) Distribution of end-of-season canopy damage D* among dominant-attractor outcomes by regime class; the dashed line marks the functional reference threshold D_crit = 0.5. (C) Distribution of rho*, the dominant eigenvalue magnitude of the annual map, by dominant-attractor class; the dashed line marks the local-stability boundary rho* = 1.
+
+Table 1. Objective 1 equilibrium summary across phenological scenarios.
+Stable-presence probability reports the fraction of parameter sets in which a given equilibrium class exists as a locally stable state. Dominant-attractor probability reports the fraction of Latin Hypercube samples whose final annual-map outcome converged to that class from the coexistence seed. H1 predicts that the desirable coexistence equilibrium x2* should be the likeliest outcome.
+
+Table S1. Baseline fixed points and local stability for Objective 1.
+This table lists the baseline annual fixed points, their ecological interpretation, equilibrium coordinates, local stability status, and bifurcation type.

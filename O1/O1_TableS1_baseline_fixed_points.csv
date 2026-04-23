@@ -1,0 +1,3 @@
+Equilibrium notation,Equilibrium class,Ecological meaning,A* (larvae ha^-1),F* (flies ha^-1),K* (scaled larvae ha^-1),D*,rho*,Stable?,Bifurcation type
+$x_1^*$,parasitoid_free,beetle persists without parasitoid persistence,3.4902288793053007,0.0,2.1833943620431477,0.5713035513439332,1.213564645994279,No,fold
+$x_2^*$,coexistence,"canopy, beetle, and parasitoid persist together",2.8715616524472805,0.1049073676577931,2.1941514269171822,0.5175811749249342,0.6902401107143578,Yes,stable

@@ -1,0 +1,17 @@
+Package: alderIPMSim
+Title: Decision Support for the Alnus-Beetle-Parasitoid-Bird Ecoepidemic System
+Version: 0.1.0
+Authors@R: person('Sinchan', 'Ghosh', role = c('aut', 'cre'), email = 'gsinchanpostdoc@gmail.com')
+URL: https://github.com/gsinchanpostdoc/alder-ipm-sim, https://gsinchanpostdoc.github.io/alder-ipm-sim/
+BugReports: https://github.com/gsinchanpostdoc/alder-ipm-sim/issues
+Description: Simulate, fit, and analyze the hybrid seasonal-annual ecoepidemic model
+    for Alnus glutinosa forests. Detect early warning signals of regime shifts,
+    evaluate integrated pest management strategies, and forecast ecosystem
+    trajectories.
+License: MIT + file LICENSE
+Imports: deSolve, rootSolve, stats, utils
+Suggests: shiny, shinydashboard, ggplot2, plotly, DT, jsonlite, testthat,
+    nleqslv, DEoptim, tools, knitr, rmarkdown, lhs
+VignetteBuilder: knitr
+Encoding: UTF-8
+RoxygenNote: 7.3.1

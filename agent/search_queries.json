@@ -1,0 +1,25 @@
+{
+  "_comment": "Strict: queries use the two target species names only. Crossref does not fully honour quoted phrases, so we rely on the LLM ranker to reject mutabilis homonyms and off-topic hits. Per-query limit dropped to 10 to keep the candidate pool small and the rate-limit budget intact.",
+  "openalex": [
+    "\"Agelastica alni\"",
+    "\"Meigenia mutabilis\"",
+    "\"Alnus glutinosa\" \"leaf beetle\""
+  ],
+  "europepmc": [
+    "\"Agelastica alni\"",
+    "\"Meigenia mutabilis\"",
+    "\"Alnus glutinosa\" AND (defoliation OR \"leaf beetle\")"
+  ],
+  "semantic_scholar": [
+    "Agelastica alni",
+    "Meigenia mutabilis",
+    "Alnus glutinosa leaf beetle"
+  ],
+  "crossref": [
+    "Agelastica alni",
+    "Meigenia mutabilis alder"
+  ],
+  "license_filter": ["cc-by", "cc-by-sa", "cc0", "public-domain"],
+  "per_query_limit": 10,
+  "min_year": 1990
+}

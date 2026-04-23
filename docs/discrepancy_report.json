@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/model.py:208,214; alder-ipm-sim-r/R/model.R:94,101-102; alder-ipm-sim-web/js/model.js:123,129",
+    "manuscript_reference": "Equations 5-6, Annex 2 Step 2 (P31-P34, P209, P231)",
+    "expected": "Manuscript separates Beverton-Holt recruitment at season START: S(0) = R_B * A_t / (1 + A_t / K_t), then simple overwinter survival at season END: A_{t+1} = sigma_A * S(T). Annex 2 P231 confirms: 'From S(0) = R_B*A_t/(1 + A_t/K_t)'. Annex 2 P216 confirms: 'A* = sigma_A * S(T; A*, 0, K*)'.",
+    "actual": "Code applies Beverton-Holt at season END instead: S0 = A_t (raw density as initial condition), then A_{t+1} = R_B * sigma_A * S_T / (1 + sigma_A * S_T / K_t). This is a structurally different model -- density-dependent regulation occurs at a different point in the annual cycle, changing transient dynamics and potentially equilibrium values.",
+    "severity": "critical",
+    "fix_description": "Restructure annual_map in all three packages: (1) Apply Beverton-Holt to compute S0 = R_B * A_t / (1 + A_t / K_t) BEFORE integrating the within-season ODE, (2) Use simple overwinter survival A_{t+1} = sigma_A * S_T AFTER integration. Update integrate_season calls accordingly."
+  },
+  {
+    "id": 2,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/control.py:147; alder-ipm-sim-r/R/control.R:229; alder-ipm-sim-web/js/control.js (missing entirely)",
+    "manuscript_reference": "Equation 7 (P36)",
+    "expected": "Manuscript Eq. 7 defines effective bird pressure as B_t = b_0 * (1 + rho * u_B), where b_0 is the baseline bird index and rho is a scaling parameter (default 0.5) that converts management effort u_B to its effect on bird density. The relationship is multiplicative.",
+    "actual": "Code uses additive form: B_index = b_0 + u_B. The rho parameter (default 0.5) exists in the parameter registry of all three packages but is NEVER used in any model equation. The web app control module does not implement bird habitat enhancement (u_B) at all.",
+    "severity": "critical",
+    "fix_description": "In all three packages: (1) Change bird pressure update to B_t = B_index_base * (1 + rho * u_B), (2) Use the rho parameter from the registry. In the web app, add u_B as a control variable in the ControlComparator and implement the manuscript's three scenarios (A, B, C) instead of the current four generic strategies."
+  },
+  {
+    "id": 3,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/parameters.py:219 (T default); alder-ipm-sim-r/R/parameters.R:102; alder-ipm-sim-web/js/parameters.js:120; baseline_params_calibrated.json:12",
+    "manuscript_reference": "Section 2.1, P20",
+    "expected": "Manuscript states 'baseline T = 55 days, range 45-70 days' for the duration of the larval vulnerability window.",
+    "actual": "All three packages and baseline_params_calibrated.json use T = 49.9 days as the default/calibrated value. While calibration can adjust parameters, a 5-day discrepancy (55 vs 49.9) from the stated baseline is significant for this phenological parameter.",
+    "severity": "moderate",
+    "fix_description": "Either update T default to 55 days to match manuscript baseline, or document explicitly that 49.9 is a calibrated value that overrides the stated baseline. If keeping 49.9, add a comment noting the manuscript baseline is 55 days."
+  },
+  {
+    "id": 4,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/control.py:89-94; alder-ipm-sim-r/R/control.R:7-13",
+    "manuscript_reference": "Equation 9-10 (P40-P41), Results P92",
+    "expected": "Manuscript P41 describes weights w_D, w_S, w_T and costs c_P, c_C, c_B but treats them as 'scenario-dependent management preferences rather than empirically fixed ecological parameters' (P58). The manuscript reports specific cost outcomes: J=14.0 (C), J=48.2 (A), J=44.7 (B) in P92.",
+    "actual": "Python and R hardcode: w_D=10, w_S=1, w_T=5, c_P=2, c_C=5, c_B=3. But baseline_params_calibrated.json has different values: w_D=1.0, w_S=0.1, w_T=5.0, cP_cost=1.0, cC_cost=1.0, cB_cost=1.0. The calibrated file weights are inconsistent with the hardcoded code values, and neither set is documented as matching a specific manuscript table.",
+    "severity": "moderate",
+    "fix_description": "Reconcile the cost weights between the hardcoded values in control.py/control.R and baseline_params_calibrated.json. Make weights configurable from parameters rather than hardcoded. Document which weight set reproduces the manuscript's reported cost values (J=14.0, J=48.2, J=44.7)."
+  },
+  {
+    "id": 5,
+    "location": "all packages (missing implementation)",
+    "manuscript_reference": "Section 2.4 (P51), Equations R1 and R2",
+    "expected": "Manuscript defines two key stability metrics: Resistance R1 = (x_ref - x_max_dev) / x_ref (standardised index measuring capacity to withstand perturbation, bounded [-1,1]), and Resilience R2 = (x_max_dev - x_Y) / (x_max_dev - x_ref) (standardised recovery index over Y=5 annual cycles). These are central to the Results (Figures 5, 4C) and are used to compare phenological scenarios.",
+    "actual": "Neither R1 nor R2 is implemented in any of the three packages. The Python, R, and web packages compute eigenvalue-based stability (rho*) and early warning signals, but NOT the trajectory-based R1/R2 metrics that the manuscript explicitly computes and reports.",
+    "severity": "critical",
+    "fix_description": "Implement compute_R1() and compute_R2() functions in all three packages. R1 requires: (1) perturbing the fixed-point state by +/-20% in A_t, (2) iterating the annual map, (3) finding the maximum deviation, (4) computing (x_ref - x_max_dev)/x_ref. R2 requires: (1) same perturbation, (2) iterating Y=5 more years, (3) computing (x_max_dev - x_Y)/(x_max_dev - x_ref)."
+  },
+  {
+    "id": 6,
+    "location": "alder-ipm-sim-web/js/control.js:107-127",
+    "manuscript_reference": "Section 3.3 (P85-P92), Figure 6",
+    "expected": "Manuscript defines three management scenarios: Strategy A (parasitoid augmentation only: u_P free, u_C=u_B=0), Strategy B (parasitoid + bird habitat: u_P and u_B free, u_C=0), Strategy C (full integrated: u_P, u_C, u_B all free). These match the Python and R implementations.",
+    "actual": "Web app implements four DIFFERENT strategies: (1) No control, (2) Chemical only (u_C=max), (3) Biocontrol only (u_P=max), (4) IPM combined (u_C=50%, u_P=50%). These do not correspond to manuscript scenarios at all. The web app also lacks u_B (bird habitat enhancement) as a control variable, uses a simplified cost functional without within-season integration, and does not perform optimization.",
+    "severity": "critical",
+    "fix_description": "Rewrite web app ControlComparator to implement the manuscript's three scenarios (A, B, C) with the correct control variable assignments. Add u_B support. Either implement within-season cost integration or clearly document the simplification."
+  },
+  {
+    "id": 7,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/control.py:405-455; alder-ipm-sim-r/R/control.R:198-217",
+    "manuscript_reference": "Section 2.4 (P53)",
+    "expected": "Manuscript defines functional threshold crossing as: 'K* falls below K_min for THREE OR MORE CONSECUTIVE YEARS, indicating persistent canopy degradation'. This is a temporal criterion, not a point-in-time check.",
+    "actual": "Code checks only the final equilibrium value: K_star <= K_min at the terminal state of the simulation. Does not check for three consecutive years below threshold during the trajectory.",
+    "severity": "moderate",
+    "fix_description": "Add a trajectory-based check in feasibility_check: scan the K time series for 3+ consecutive years below K_min, not just the final value."
+  },
+  {
+    "id": 8,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/model.py:216; alder-ipm-sim-r/R/model.R:104; alder-ipm-sim-web/js/model.js:131",
+    "manuscript_reference": "Equation 8, Annex 2 P241",
+    "expected": "Manuscript Eq. 8 and Annex 2 P241 confirm K_{t+1} = K_0 * exp(-phi * D_T), using the exponential penalty form. The Annex explicitly differentiates this: 'From K_{t+1} = K_0 exp(-phi D_T)'.",
+    "actual": "Code uses K_next = K_0 * exp(-phi * D_T) in all three packages. This MATCHES the manuscript.",
+    "severity": "minor",
+    "fix_description": "No fix needed. The code correctly implements the exponential penalty form confirmed in Annex 2. The task's suggestion that the manuscript uses K_0*(1-phi*D_t) is incorrect -- the Annex explicitly shows the exp form."
+  },
+  {
+    "id": 9,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/model.py:337-340; alder-ipm-sim-r/R/model.R:182-183; alder-ipm-sim-web/js/model.js:201-202",
+    "manuscript_reference": "Equation 11 (P42-43)",
+    "expected": "R_P = beta * eta * delta * sigma_F / ((1 + h * S_bar) * mu_F * (mu_I + delta))",
+    "actual": "All three packages implement R_P = beta * eta * delta * sigma_F / ((1 + h * S_bar) * mu_F * (mu_I + delta)). This MATCHES the manuscript.",
+    "severity": "minor",
+    "fix_description": "No fix needed. R_P formula is correctly implemented in all three packages."
+  },
+  {
+    "id": 10,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/model.py:96,100-108; alder-ipm-sim-r/R/model.R:15-37; alder-ipm-sim-web/js/model.js:26-48",
+    "manuscript_reference": "Equations 1-4 (P21-P29)",
+    "expected": "Within-season ODE: dS/dt = -beta*S*F/(1+h*S) - c_B*B_t*(S+I)/(1+a_B*(S+I)) - (mu_S+u_C)*S; dI/dt = beta*S*F/(1+h*S) - c_B*B_t*(S+I)/(1+a_B*(S+I)) - (mu_I+delta+u_C)*I; dF/dt = eta*delta*I - mu_F*F + u_P; dD/dt = kappa*(S+I)",
+    "actual": "All three packages implement these four equations correctly, term-by-term matching the manuscript.",
+    "severity": "minor",
+    "fix_description": "No fix needed. Within-season ODE is correctly implemented in all three packages."
+  },
+  {
+    "id": 11,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/warnings.py:519; alder-ipm-sim-py/alder-ipm-sim/warnings.py:520",
+    "manuscript_reference": "Section 2.4 (P54, P81)",
+    "expected": "PRCC threshold |PRCC| > 0.25 for classifying parametric drivers of instability. Regime-shift probability > 20% threshold for early warning candidates.",
+    "actual": "Python code uses prcc_threshold=0.25 and shift_prob_threshold=0.2. These MATCH the manuscript.",
+    "severity": "minor",
+    "fix_description": "No fix needed. PRCC and regime-shift probability thresholds match the manuscript."
+  },
+  {
+    "id": 12,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/control.py:405-455; alder-ipm-sim-r/R/control.R:198-217",
+    "manuscript_reference": "Section 2.4 (P53)",
+    "expected": "Manuscript feasibility criteria: (1) D* < D_crit, (2) K* > K_min (for 3+ consecutive years), (3) F* > 0, (4) rho* < 1 (strictly). No tolerance mentioned.",
+    "actual": "Code uses rho* < 1.01 with a tolerance for numerical imprecision. While pragmatic, the manuscript states rho* < 1 as the strict criterion.",
+    "severity": "minor",
+    "fix_description": "Consider tightening the stability tolerance to rho* < 1.0 (or 1 + epsilon with epsilon much smaller than 0.01) to better match the manuscript's strict criterion. Document the tolerance if kept."
+  },
+  {
+    "id": 13,
+    "location": "baseline_params_calibrated.json (all parameters)",
+    "manuscript_reference": "Annex 1, Table S1 (P172)",
+    "expected": "Parameter defaults should match either the manuscript baseline values or documented calibrated values. Key manuscript baselines: T=55 days, and parameter names should be consistent.",
+    "actual": "baseline_params_calibrated.json uses 'K0' (no underscore) while all code packages use 'K_0' (with underscore). The JSON also stores cost weights (w_D, w_S, w_T, cP_cost, cC_cost, cB_cost) with values (1.0, 0.1, 5.0, 1.0, 1.0, 1.0) that don't match the hardcoded values in control modules.",
+    "severity": "moderate",
+    "fix_description": "Rename 'K0' to 'K_0' in baseline_params_calibrated.json for consistency. Reconcile cost weight values between the JSON and the hardcoded control module values. Add documentation explaining which values are manuscript baselines vs calibrated."
+  },
+  {
+    "id": 14,
+    "location": "alder-ipm-sim-py/alder-ipm-sim/parameters.py:232 (B_index); all packages",
+    "manuscript_reference": "Equation 7 (P36)",
+    "expected": "The manuscript's bird pressure (Eq. 7) is a computed quantity: B_t = b_0 * (1 + rho * u_B). At baseline (no management, u_B=0), B_t = b_0. The parameter b_0 is the exogenous baseline bird index.",
+    "actual": "Code treats B_index as a direct parameter (default 1.59) used in the within-season ODE. The rho parameter (default 0.5) exists in the registry but is unused. When control is applied, B_index is modified additively (B_index += u_B) instead of multiplicatively (B_t = b_0 * (1 + rho * u_B)).",
+    "severity": "critical",
+    "fix_description": "Implement Eq. 7 properly: store b_0 (baseline bird index = 1.59) as a parameter, compute B_t = b_0 * (1 + rho * u_B) when controls are active, and pass B_t to the within-season ODE. Remove the dead rho parameter from the registry if not implementing Eq. 7, or use it correctly."
+  },
+  {
+    "id": 15,
+    "location": "alder-ipm-sim-web/js/control.js:34-58",
+    "manuscript_reference": "Equation 9 (P40-P41)",
+    "expected": "Manuscript cost functional J integrates within-season running costs: J = sum over years of [integral_0^T (w_D*D(tau) + w_S*S(tau) + c_P*u_P + c_C*u_C) dtau + w_T*D(T)] + c_B*u_B*N. This requires within-season trajectory integration.",
+    "actual": "Web app uses a simplified cost: J = sum of per-year costs using annual-map state values (D[t+1], A[t+1]) rather than within-season integration. Terminal costs use K_0 - K_final (capacity loss penalty) which is not in the manuscript. The cost functional structure is qualitatively different.",
+    "severity": "critical",
+    "fix_description": "Rewrite web app cost functional to integrate within-season trajectories as in the manuscript, or clearly document the simplification. Remove the K_0-K_final penalty term not present in the manuscript."
+  },
+  {
+    "id": 16,
+    "location": "all packages (missing implementation)",
+    "manuscript_reference": "Section 2.4 (P53), latitude metric",
+    "expected": "Manuscript defines 'latitude' as the maximum perturbation magnitude the system can absorb before losing ability to recover, computed by progressively increasing perturbation delta until the annual map fails to return to the original equilibrium within 50 annual iterations.",
+    "actual": "Latitude is not implemented in any package. The Python package implements basin_stability (model.py:578-666) which is related but distinct -- it samples random initial conditions rather than progressively increasing perturbation magnitude from a fixed point.",
+    "severity": "moderate",
+    "fix_description": "Implement a compute_latitude() function that progressively increases perturbation magnitude from a fixed point until the system transitions to an alternative attractor within 50 iterations."
+  }
+]

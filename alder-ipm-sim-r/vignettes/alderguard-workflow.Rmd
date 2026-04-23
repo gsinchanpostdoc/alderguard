@@ -1,0 +1,154 @@
+---
+title: "AlderIPM-Sim: Complete Workflow"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{AlderIPM-Sim: Complete Workflow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 4
+)
+```
+
+## Introduction
+
+The **alder-ipm-sim** package provides tools for simulating, fitting, and
+analysing the Alnus glutinosa -- beetle -- parasitoid -- bird ecoepidemic
+system. This vignette walks through a complete workflow from parameter
+exploration to management recommendations.
+
+## 1. Parameter Exploration
+
+```{r params}
+library(alderIPMSim)
+
+# View default parameters
+params <- default_params()
+print(params)
+
+# Explore the full registry with metadata
+reg <- param_registry()
+cat("Parasitoid attack rate (beta):", reg$beta$default, reg$beta$unit, "\n")
+cat("Description:", reg$beta$description, "\n")
+
+# Pretty-print mortality parameters
+print_params(category = "mortality")
+```
+
+## 2. Multi-Year Simulation
+
+Simulate 50 years of ecosystem dynamics starting from typical initial
+conditions.
+
+```{r simulation}
+p <- as.list(params)
+p$u_C <- 0
+p$u_P <- 0
+
+traj <- simulate(p, A0 = 0.8, F0 = 0.1, K0 = 1.712, D0 = 0, n_years = 50)
+
+par(mfrow = c(2, 2), mar = c(4, 4, 2, 1))
+plot(traj$year, traj$A, type = "l", col = "firebrick",
+     xlab = "Year", ylab = "Beetle density (A)", main = "Beetle Population")
+plot(traj$year, traj$F, type = "l", col = "steelblue",
+     xlab = "Year", ylab = "Parasitoid density (F)", main = "Parasitoid Population")
+plot(traj$year, traj$K, type = "l", col = "forestgreen",
+     xlab = "Year", ylab = "Carrying capacity (K)", main = "Canopy Health")
+plot(traj$year, traj$D, type = "l", col = "darkorange",
+     xlab = "Year", ylab = "Defoliation (D)", main = "Defoliation")
+```
+
+## 3. Equilibrium Analysis
+
+Compute the parasitoid reproduction number R_P.
+
+```{r rp}
+R_P <- compute_RP(p)
+cat("Parasitoid reproduction number R_P =", round(R_P, 3), "\n")
+if (R_P > 1) {
+  cat("R_P > 1: parasitoid can persist -- biological control is viable.\n")
+} else {
+  cat("R_P < 1: parasitoid cannot invade -- augmentation needed.\n")
+}
+```
+
+## 4. Early Warning Signal Detection
+
+Use the simulated beetle density trajectory to demonstrate early warning
+signal detection.
+
+```{r ews}
+beetle_ts <- traj$A
+
+ews <- compute_ews(beetle_ts, window = 10)
+head(ews)
+
+# Kendall trend test on variance
+kt <- kendall_trend(ews$variance)
+cat("Kendall tau for variance:", round(kt$tau, 3),
+    " p-value:", round(kt$p_value, 4), "\n")
+```
+
+## 5. Loading Example Data
+
+The package ships with example CSV datasets in `inst/extdata/`.
+
+```{r extdata}
+stable_file <- system.file("extdata", "example_stable_coexistence.csv",
+                           package = "alder-ipm-sim")
+stable_data <- read.csv(stable_file)
+head(stable_data)
+
+# Prepare for fitting
+prepared <- prepare_data(stable_data, time_col = "year")
+cat("Prepared", prepared$n_obs, "observations with states:",
+    paste(names(prepared$obs), collapse = ", "), "\n")
+```
+
+## 6. Data Fitting
+
+Fit model parameters to observed data.
+
+```{r fitting, eval = FALSE}
+result <- fit_model(prepared, fit_params = c("beta", "phi"))
+cat("R-squared:", round(result$r_squared, 4), "\n")
+cat("Fitted beta:", round(result$fitted_params[["beta"]], 5), "\n")
+cat("Fitted phi:", round(result$fitted_params[["phi"]], 5), "\n")
+```
+
+## 7. Management Strategy Comparison
+
+Compare three integrated pest management strategies.
+
+```{r control, eval = FALSE}
+ic <- c(A = 0.8, F = 0.1, K = 1.712, D = 0)
+comp <- compare_strategies(p, initial_state = ic, n_years = 30)
+print(comp$comparison)
+cat("\n", comp$interpretation, "\n")
+```
+
+## 8. Interactive Dashboard
+
+Launch the Shiny dashboard for interactive exploration:
+
+```{r shiny, eval = FALSE}
+run_app()
+```
+
+## Summary
+
+This vignette demonstrated the core AlderIPM-Sim workflow:
+
+1. **Parameter exploration** -- inspect defaults and metadata
+2. **Simulation** -- run multi-year ecosystem projections
+3. **Equilibrium analysis** -- compute R_P and stability
+4. **Early warnings** -- detect critical slowing down
+5. **Data fitting** -- estimate parameters from field data
+6. **Control optimisation** -- compare management strategies
+7. **Interactive dashboard** -- explore interactively via Shiny

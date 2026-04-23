@@ -1,0 +1,84 @@
+<!--
+===============================================================================
+  AlderIPM-Sim entry for Research Tools — Dr. Sinchan Ghosh
+  Target file: Profile/apps.html  (https://gsinchanpostdoc.github.io/Profile/apps.html)
+  Paste this whole block where you want the AlderIPM-Sim entry to appear
+  (below the existing Scandinavian SDM and Forage Energy sections is the
+  natural place). The card uses your site's existing classes (.tool-section,
+  .container, .tool-intro, .badge.badge--primary, .section-title, .btn.btn--primary),
+  so it inherits the same typography and colours automatically.
+===============================================================================
+-->
+
+<!-- ══════════════ AlderIPM-Sim Research Tool ══════════════ -->
+<div class="tool-section" id="alder-ipm-sim">
+  <div class="container">
+
+    <!-- Card header: badge + title + description + launch buttons -->
+    <div class="tool-intro">
+      <div>
+        <span class="badge badge--primary mb-4" style="display:inline-flex;">
+          Frontiers in Ecology & Evolution (in review)
+        </span>
+        <h2 class="section-title mb-2">
+          AlderIPM-Sim &mdash; Alnus Ecoepidemic Decision-Support
+        </h2>
+        <p style="font-size:var(--text-lg); color:var(--color-text-muted); line-height:1.65; margin-bottom:var(--space-5);">
+          An in-browser decision-support tool for the black alder
+          (<em>Alnus glutinosa</em>) &ndash; alder leaf beetle
+          (<em>Agelastica alni</em>) &ndash; tachinid parasitoid
+          (<em>Meigenia mutabilis</em>) &ndash; insectivorous-bird ecoepidemic
+          system. Pick any of 41 Natura 2000 alluvial-forest sites across
+          Europe on the interactive map, calibrate 23 model parameters from
+          a continuously-updated literature metadatabase, run multi-year
+          simulations, detect early-warning signals of regime shifts, fit to
+          your own field observations, and compare integrated pest-management
+          strategies. Every parameter slider carries a literature-pooled
+          95&thinsp;% confidence interval and citation trail. Companion
+          Python package and R package share the same model and outputs.
+        </p>
+        <a href="https://gsinchanpostdoc.github.io/alder-ipm-sim/"
+           class="btn btn--primary" target="_blank" rel="noopener">
+          Open Application
+        </a>
+        <a href="https://github.com/gsinchanpostdoc/alder-ipm-sim"
+           class="btn" target="_blank" rel="noopener"
+           style="margin-left:8px;">
+          Source code &amp; packages
+        </a>
+      </div>
+    </div>
+
+    <!-- Inline iframe so visitors can use the app without leaving the page.
+         Height sized for typical research-tool use; a link above opens it
+         in a full tab for users who prefer more screen real estate. -->
+    <div style="margin-top:28px; border:1px solid var(--color-border, #e5e7eb);
+                border-radius:12px; overflow:hidden;
+                box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+      <iframe src="https://gsinchanpostdoc.github.io/alder-ipm-sim/"
+              title="AlderIPM-Sim interactive decision-support app"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              allow="clipboard-read; clipboard-write"
+              style="width:100%; height:860px; border:0; display:block;">
+      </iframe>
+    </div>
+
+    <!-- Citation + install hints -->
+    <div style="margin-top:18px; font-size:13px;
+                color:var(--color-text-muted, #555); line-height:1.6;">
+      <strong>Cite:</strong> Ghosh, S. <em>et al.</em> (2026). AlderIPM-Sim:
+      Hybrid seasonal-annual modelling and early warning signals for the
+      <em>Alnus</em>-beetle-parasitoid-bird ecoepidemic system.
+      <em>Frontiers in Ecology and Evolution</em> (manuscript submitted).
+      <br>
+      <strong>Install in Python:</strong>
+      <code>pip install "git+https://github.com/gsinchanpostdoc/alder-ipm-sim.git#subdirectory=alder-ipm-sim-py"</code>
+      <br>
+      <strong>Install in R:</strong>
+      <code>remotes::install_github("gsinchanpostdoc/alder-ipm-sim", subdir = "alder-ipm-sim-r")</code>
+    </div>
+
+  </div>
+</div>
+<!-- ══════════════ /AlderIPM-Sim Research Tool ══════════════ -->

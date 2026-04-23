@@ -1,0 +1,5 @@
+variant,most_probable_equilibrium,regime_shift_probability,winner_strategy
+baseline,trivial,0.85,C
+ricker,parasitoid_free,0.9833333333333333,C
+linear_bird,parasitoid_free,0.9,C
+direct_parasitism,trivial,0.8166666666666667,C

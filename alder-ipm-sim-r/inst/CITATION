@@ -1,0 +1,30 @@
+bibentry(
+  bibtype  = "Article",
+  title    = "Ecological Dynamics and Pest Management in the Alnus glutinosa--Beetle--Parasitoid--Bird Ecoepidemic System",
+  author   = c(
+    person("AlderIPM-Sim", "Team")
+  ),
+  journal  = "Frontiers in Applied Mathematics and Statistics",
+  year     = "2026",
+  note     = "Manuscript under review",
+  textVersion = paste(
+    "AlderIPM-Sim Team (2026).",
+    "Ecological Dynamics and Pest Management in the",
+    "Alnus glutinosa--Beetle--Parasitoid--Bird Ecoepidemic System.",
+    "Frontiers in Applied Mathematics and Statistics.",
+    "Manuscript under review."
+  )
+)
+
+bibentry(
+  bibtype  = "Manual",
+  title    = "alder-ipm-sim: Decision Support for the Alnus-Beetle-Parasitoid-Bird Ecoepidemic System",
+  author   = person("AlderIPM-Sim", "Team"),
+  year     = "2026",
+  note     = "R package version 0.1.0",
+  textVersion = paste(
+    "AlderIPM-Sim Team (2026).",
+    "alder-ipm-sim: Decision Support for the Alnus-Beetle-Parasitoid-Bird",
+    "Ecoepidemic System. R package version 0.1.0."
+  )
+)

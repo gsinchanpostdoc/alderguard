@@ -1,0 +1,16 @@
+parameter,phenological_scenario,prcc_rho_star,warning_candidate,direction
+beta,Variable parasitoid attack efficiency,0.2099057728991665,False,destabilising increase
+h,h,-0.07558636620444614,False,destabilising decrease
+a_B,a_B,0.1323741247677898,False,destabilising increase
+mu_S,Decreased susceptible larval mortality,-0.2917745636254604,True,destabilising decrease
+mu_I,mu_I,0.03443509300672437,False,destabilising increase
+delta,Accelerated parasitoid development,-0.09789685002425215,False,destabilising decrease
+eta,eta,0.011024138212784727,False,destabilising increase
+mu_F,mu_F,-0.33988931838639674,True,destabilising decrease
+R_B,Variable beetle fecundity,0.09260178505833638,False,destabilising increase
+sigma_A,Reduced winter severity (beetle),0.0417057014148523,False,destabilising increase
+sigma_F,Reduced winter severity (parasitoid),0.055100584430135505,False,destabilising increase
+phi,Accumulated phytochemical defence,-0.042847945635331716,False,destabilising decrease
+T,Extended/shortened season length,-0.2600696867540733,True,destabilising decrease
+K0,K0,0.07364785709364803,False,destabilising increase
+B_index,Variable bird predation pressure,-0.033401063731405146,False,destabilising decrease

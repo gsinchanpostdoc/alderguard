@@ -1,0 +1,313 @@
+{
+  "schema_version": "0.1",
+  "notes": "AlderIPM-Sim parameter metadatabase. Two kinds of entries: reviewed (human-confirmed, shown prominently on sliders with tight CI bands) and unreviewed (auto-extracted by the literature agent, shown faded and labelled). The literature agent appends candidate values into this file via a GitHub Actions cron; see agent/README.md. Sliders read from per-location pre-aggregated calibration rows if present, otherwise fall back to parameter-level pooled rows.",
+  "agent_state": {
+    "last_run": "2026-04-23T05:29:12Z",
+    "n_runs": 12,
+    "n_papers_indexed": 2,
+    "n_reviewed_values": 23,
+    "n_unreviewed_values": 1,
+    "updated": "2026-04-23T05:29:12Z"
+  },
+  "citations": [
+    {
+      "key": "ghosh2026",
+      "authors": "Ghosh, S. et al.",
+      "year": 2026,
+      "title": "AlderIPM-Sim: Hybrid seasonal-annual modelling and early warning signals for the Alnus-beetle-parasitoid-bird ecoepidemic system",
+      "venue": "Frontiers in Ecology and Evolution (manuscript submitted)",
+      "doi": null,
+      "license": "manuscript (in review)",
+      "url": "https://github.com/gsinchanpostdoc/alder-ipm-sim",
+      "context": "Baseline calibration for a representative central-European Alnus glutinosa / Agelastica alni / Meigenia mutabilis / passerine system, fitted to multi-year field observations."
+    },
+    {
+      "key": "doi:10.1046/j.1469-8137.1998.00270.x",
+      "authors": "Jacek Oleksyn, Piotr Karolewski, Marian J. Giertych, Roma Żytkowiak, Peter B. Reich, Mark G. Tjoelker",
+      "year": 1998,
+      "title": "Primary and secondary host plants differ in leaf‐level photosynthetic response to herbivory: evidence from <i>Alnus</i> and <i>Betula</i> grazed by the alder beetle, <i>Agelastica alni</i>",
+      "venue": "New Phytologist",
+      "doi": "10.1046/j.1469-8137.1998.00270.x",
+      "license": "open-access",
+      "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1046/j.1469-8137.1998.00270.x",
+      "context": "Auto-indexed by AlderIPM-Sim literature agent."
+    }
+  ],
+  "values": [
+    {
+      "param": "beta",
+      "value": 0.0301,
+      "ci_low": 0.025,
+      "ci_high": 0.035,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "h",
+      "value": 0.00575,
+      "ci_low": 0.003,
+      "ci_high": 0.008,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "c_B",
+      "value": 0.0209,
+      "ci_low": 0.016,
+      "ci_high": 0.026,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "a_B",
+      "value": 0.00651,
+      "ci_low": 0.003,
+      "ci_high": 0.01,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "mu_S",
+      "value": 0.00423,
+      "ci_low": 0.003,
+      "ci_high": 0.006,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "mu_I",
+      "value": 0.0443,
+      "ci_low": 0.035,
+      "ci_high": 0.055,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "delta",
+      "value": 0.1918,
+      "ci_low": 0.15,
+      "ci_high": 0.23,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "eta",
+      "value": 0.7054,
+      "ci_low": 0.6,
+      "ci_high": 0.82,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "mu_F",
+      "value": 0.0309,
+      "ci_low": 0.02,
+      "ci_high": 0.045,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "kappa",
+      "value": 0.00273,
+      "ci_low": 0.0015,
+      "ci_high": 0.004,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "T",
+      "value": 49.9,
+      "ci_low": 45.0,
+      "ci_high": 55.0,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "B_index",
+      "value": 1.59,
+      "ci_low": 1.2,
+      "ci_high": 1.9,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "R_B",
+      "value": 9.53,
+      "ci_low": 7.5,
+      "ci_high": 12.0,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "sigma_A",
+      "value": 0.781,
+      "ci_low": 0.7,
+      "ci_high": 0.86,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "sigma_F",
+      "value": 0.363,
+      "ci_low": 0.3,
+      "ci_high": 0.44,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "K_0",
+      "value": 1.712,
+      "ci_low": 1.4,
+      "ci_high": 1.95,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "phi",
+      "value": 0.0449,
+      "ci_low": 0.025,
+      "ci_high": 0.07,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "rho",
+      "value": 0.5,
+      "ci_low": 0.4,
+      "ci_high": 0.6,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "u_P_max",
+      "value": 0.5,
+      "ci_low": 0.0,
+      "ci_high": 1.0,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "u_C_max",
+      "value": 0.2,
+      "ci_low": 0.0,
+      "ci_high": 1.0,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "u_B_max",
+      "value": 1.0,
+      "ci_low": 0.0,
+      "ci_high": 2.0,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "D_crit",
+      "value": 0.5,
+      "ci_low": 0.3,
+      "ci_high": 0.7,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "K_min",
+      "value": 0.856,
+      "ci_low": 0.7,
+      "ci_high": 1.0,
+      "site_id": null,
+      "cite": "ghosh2026",
+      "reviewed": true,
+      "quality": "A"
+    },
+    {
+      "param": "D_crit",
+      "value": 0.4,
+      "ci_low": 0.32000000000000006,
+      "ci_high": 0.48,
+      "site_id": null,
+      "cite": "doi:10.1046/j.1469-8137.1998.00270.x",
+      "reviewed": false,
+      "quality": "auto",
+      "context_quote": "net reduction in photosynthesis per leaf occurred only when the proportion of leaf area grazed exceeded 40%",
+      "confidence": 0.9,
+      "rank_score": 0.8,
+      "rank_reason": "Paper discusses herbivory by Agelastica alni on Alnus glutinosa with quantitative measurements.",
+      "source_api": "openalex"
+    }
+  ],
+  "site_calibration": {
+    "bialowieza": {
+      "coverage": "partial",
+      "climate_driven": {
+        "T": {
+          "adjust": -2.0,
+          "reason": "Shorter season at 52.7°N central-eastern continental climate."
+        },
+        "sigma_A": {
+          "adjust": -0.04,
+          "reason": "Lower winter survival (WorldClim winter T -3.5 °C)."
+        }
+      },
+      "values": []
+    },
+    "camargue": {
+      "coverage": "partial",
+      "climate_driven": {
+        "T": {
+          "adjust": 5.0,
+          "reason": "Mediterranean climate extends larval vulnerability."
+        },
+        "sigma_A": {
+          "adjust": 0.05,
+          "reason": "Higher winter survival (winter T 7.4 °C)."
+        }
+      },
+      "values": []
+    }
+  }
+}

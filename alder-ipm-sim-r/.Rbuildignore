@@ -1,0 +1,13 @@
+^\.Rproj\.user$
+^.*\.Rproj$
+^\.Rhistory$
+^\.RData$
+^\.Rcheck$
+^\.DS_Store$
+^Thumbs\.db$
+^\.gitignore$
+^\.orchestrator-history\.json$
+^README\.Rmd$
+^LICENSE\.md$
+^docs$
+^INSTALL\.md$

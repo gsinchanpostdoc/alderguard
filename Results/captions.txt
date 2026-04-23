@@ -1,0 +1,50 @@
+FIGURE AND TABLE CAPTIONS
+========================
+
+FIGURES
+-------
+
+Figure 1. Equilibrium landscape across the phenological parameter space.
+(A) Baseline fixed points of the annual map at calibrated parameters; bar length indicates equilibrium beetle density A*, with spectral radius ρ* and stability status annotated. (B) Fraction of the Latin Hypercube–sampled parameter space in which each equilibrium class exists as a locally stable fixed point; bars can exceed unity in sum due to multistability. (C) Dominant-attractor frequency: the fraction of sampled parameter sets for which the annual map trajectory converges to each class from the coexistence reference initial condition; multistability rate annotated.
+
+Figure 2. Equilibrium transition structure under one-parameter and pairwise variation.
+Top row: one-parameter branch diagrams showing equilibrium damage D* versus (A) season duration T, (B) beetle reproduction ratio R_B, (C) parasitoid attack rate β, and (D) beetle overwinter survival σ_A. Each point represents a fixed point of the annual map; filled markers denote locally stable equilibria, open markers denote unstable equilibria. Bottom row: pairwise phase planes in the (E) β–B_t, (F) β–δ, and (G) σ_A–σ_F planes. Grey contours show R_P values; the bold contour marks R_P = 1 (transcritical bifurcation boundary separating coexistence and parasitoid-free regimes).
+
+Figure 3. Parasitoid invasion threshold R_P as a function of each phenological parameter.
+Each panel shows R_P evaluated at the parasitoid-free fixed point of the annual map while varying one parameter across its plausible range (Table X), with all other parameters held at the calibrated baseline. The dashed red line marks R_P = 1: above this boundary the parasitoid can invade and persist (coexistence regime); below it the parasitoid declines to extinction (parasitoid-free regime). Vertical dotted lines indicate the approximate parameter value at which the threshold crossing occurs.
+
+Figure 4. Early-warning summary: parametric drivers, regime-shift probability, and adaptive-stability reference frame.
+(A) Partial rank correlation coefficients (PRCC) between each model parameter and the dominant eigenvalue magnitude ρ* across the Latin Hypercube sample; red bars indicate |PRCC| > 0.25 (warning candidates). (B) Regime-shift probability per phenological scenario (one-at-a-time variation) and for the joint Latin Hypercube sample; horizontal bars show 95% bootstrap confidence intervals; colour indicates risk level. (C) All one-at-a-time scan points projected onto the resistance–resilience plane, where resistance = 1 − D*/D_crit and resilience = 1 − ρ*; green circles denote coexistence outcomes, red crosses denote regime shifts.
+
+Figure 5. Adaptive stability profiles: resistance, resilience, and recovery across all phenological parameters.
+Each panel shows the standardised Van Meerbeek et al. (2021) indices R1 (resistance, solid circles), R2 (resilience, open squares), and R3 (recovery, triangles) evaluated at the coexistence equilibrium while varying one phenological parameter. Values of 1 indicate maximal stability; 0 indicates complete loss. Panels where R1 and R2 diverge in opposite directions reveal the temporal discordance between within-season resistance and annual resilience.
+
+Figure 6. Foliage-feedback synthesis: Van Meerbeek adaptive-stability reference frame for the damage-to-capacity penalty φ.
+(A) Equilibrium carrying capacity K* versus φ. (B) Equilibrium cumulative defoliation D* versus φ; dashed line marks D_crit = 0.5. (C) Dominant eigenvalue magnitude ρ* versus φ; dashed line marks the stability boundary ρ* = 1. (D) Adaptive-stability phase plot placing each φ value in the resistance (1 − D*/D_crit) versus resilience (1 − ρ*) plane; points coloured by φ value, connected in φ order; quadrant labels indicate the four stability regimes.
+
+Figure 7. Bifurcation branch diagram for the foliage-feedback coefficient φ.
+All fixed points of the annual map identified at each scanned φ value. (A) Equilibrium damage D*, (B) equilibrium carrying capacity K*, (C) equilibrium parasitoid density F*. Filled markers denote locally stable equilibria; open markers denote unstable equilibria. Marker shape and colour indicate equilibrium class.
+
+Figure 8. Terminal within-season optimal control profiles under three management scenarios.
+(A) Parasitoid augmentation effort u_P(τ) over within-season time τ for Scenario A (parasitoid only), B (parasitoid + bird habitat), and C (full integrated control). (B) Direct larval removal effort u_C(τ); active only in Scenario C. (C) Selected annual bird-habitat enhancement u_B for each scenario.
+
+Figure 9. Multi-year state trajectories under three management scenarios.
+(A) Seasonal cumulative defoliation D_t and (B) carrying capacity K_t over the planning horizon. Dashed horizontal line in (A) marks the damage threshold D_crit = 0.5.
+
+Figure 10. Strategy performance summary including Van Meerbeek stability metrics.
+Top row: (A) equilibrium damage D*, (B) equilibrium carrying capacity K*, (C) dominant eigenvalue magnitude ρ*, (D) total management cost J. Bottom row: (E) standardised resistance R1, (F) standardised resilience R2, (G) standardised recovery R3, (H) basin latitude. Green bars indicate feasible strategies (D* < D_crit, K* > K_min, F* > 0, ρ* < 1); red bars indicate infeasible strategies.
+
+Figure 11. Structural robustness of the regime-shift probability under four alternative model formulations.
+Regime-shift probability (fraction of Latin Hypercube samples converging to an alternative equilibrium) evaluated under the baseline model (Beverton–Holt recruitment, Holling Type II bird predation, compartmental parasitism) and three structural alternatives: Ricker recruitment, linear bird predation, and direct parasitoid-induced mortality. Text above each bar indicates the most probable equilibrium class under that formulation.
+
+TABLES
+------
+
+Table 1. Objective 1 verdict: equilibrium prevalence across the phenological parameter space.
+Stable-class frequency reports the fraction of Latin Hypercube–sampled parameter sets at which each class exists as a locally stable fixed point. Dominant-attractor frequency reports the fraction converging to each class from the coexistence reference initial condition. H1 is supported if coexistence is the most frequent stable class (> 50%).
+
+Table 2. Candidate early-warning signal matrix for regime shift (Objective 2).
+Each phenological scenario is characterised by its regime-shift probability (one-at-a-time variation), PRCC with the dominant eigenvalue magnitude ρ*, the destabilising direction of the corresponding parameter, the likely alternative equilibrium, and whether the phenological change is empirically observable. Parameters with regime-shift probability > 20% or |PRCC| > 0.25 that are empirically observable are classified as early-warning candidates.
+
+Table 3. Optimal control strategy comparison (Objective 3).
+Performance of three management scenarios evaluated at their controlled equilibrium. Feasibility requires D* < D_crit, K* > K_min = 0.5 K₀, F* > 0 (parasitoid present), and ρ* < 1 (local asymptotic stability). R1, R2, R3, and latitude follow the Van Meerbeek et al. (2021) standardised definitions. The winner is selected by lexicographic decision: feasibility first, then minimum total cost J among feasible strategies.

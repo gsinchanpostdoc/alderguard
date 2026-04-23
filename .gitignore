@@ -1,0 +1,39 @@
+# ── Python ──────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg
+
+# ── R ──────────────────────────────────────────────
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+alder-ipm-sim-r/src/*.o
+alder-ipm-sim-r/src/*.so
+alder-ipm-sim-r/src/*.dll
+alder-ipm-sim-r.Rcheck/
+alder-ipm-sim_*.tar.gz
+
+# ── Editors / OS ───────────────────────────────────
+.DS_Store
+Thumbs.db
+*~
+*.swp
+.idea/
+.vscode/
+
+# ── Manuscript & working files (not code) ──────────
+~$*.docx
+~$*.odt
+Manuscript_backup.docx
+*.pdf.bak
+
+# ── Node (in case tooling is added later) ──────────
+node_modules/

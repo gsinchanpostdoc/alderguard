@@ -1,0 +1,6 @@
+Equilibrium notation,Ecological meaning,Desirable under H1?,Stable presence probability,95% CI low,95% CI high,Dominant attractor probability,Dominant attractor n,Median A* (larvae ha^-1),Median F* (flies ha^-1),Median K* (scaled larvae ha^-1),Median D*,Median rho*,Role in H1 test
+$x_0^*$ canopy-only,canopy present; parasitoid absent; bird channel only,No,0.44,0.372375,0.5076249999999999,0.215,43,1.3764703436189435e-10,6.454230267126906e-57,2.0529841866578145,3.858102037049315e-11,0.5659805086284673,alternative class
+$x_1^*$ parasitoid-free,beetle persists without parasitoid persistence,No,0.84,0.79,0.89,0.6,120,0.3588014419991299,1.6082556898043547e-37,1.951396936366671,0.13353391170257933,0.794163431842617,alternative class
+$x_{1d}^*$ parasitoid-free degraded,parasitoid-free with persistent canopy degradation,No,0.0,0.0,0.0,0.0,0,,,,,,alternative class
+$x_2^*$ coexistence,"canopy, beetle, and parasitoid persist together",Yes,0.42,0.352375,0.4776249999999998,0.185,37,0.8335347130967818,0.1167325143300164,2.003765412429913,0.2551846992062239,0.8835347652715079,H1-supported class
+$x_{2d}^*$ coexistence degraded,coexistence with persistent canopy degradation,No,0.0,0.0,0.0,0.0,0,,,,,,alternative class

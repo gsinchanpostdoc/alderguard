@@ -1,0 +1,67 @@
+name: Literature Agent
+
+# Cron: 03:00 UTC daily. Can also be launched manually from the Actions tab.
+# Respects free-tier quotas (Gemini 1.5 Flash: ~1500 req/day; OpenAlex & Europe PMC: free).
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit metadatabase.json updates back to main
+
+concurrency:
+  group: literature-agent
+  cancel-in-progress: false
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        working-directory: agent
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run agent
+        working-directory: agent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Free-tier defaults: Flash for both ranking and extraction
+          # (1500 req/day). Swap to 'gemini-1.5-pro' for higher quality within
+          # its 50 req/day free tier, or leave alone for maximum throughput.
+          GEMINI_MODEL: "gemini-1.5-flash"
+          GEMINI_RANK_MODEL: "gemini-1.5-flash"
+          # Optional free Groq fallback if Gemini is rate-limited or absent.
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          AGENT_CONTACT_EMAIL: "gsinchanpostdoc@gmail.com"
+          AGENT_DAILY_CAP: "15"
+          # Throttles to stay inside Groq free-tier 12k TPM budget:
+          GROQ_RANK_MIN_INTERVAL_S: "6"
+          GROQ_EXTRACT_MIN_INTERVAL_S: "8"
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
+        run: python src/run.py
+
+      - name: Commit updated metadatabase
+        run: |
+          git config user.name  "alderipmsim-agent[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain alder-ipm-sim-web/data/metadatabase.json agent/backlog.jsonl)" ]; then
+            git add alder-ipm-sim-web/data/metadatabase.json agent/backlog.jsonl || true
+            git commit -m "agent: metadatabase update"
+            git push
+          else
+            echo "No metadatabase changes this run."
+          fi

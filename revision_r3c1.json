@@ -1,0 +1,12 @@
+[
+  {
+    "old": "Both S and I contribute to damage because parasitised larvae continue to feed until the parasitoid completes development.",
+    "new": "Both S and I contribute to damage because parasitised larvae continue to feed until the parasitoid completes development. Equation 4 does not impose an explicit upper bound on D; however, across all parameter combinations explored in the numerical analyses (one-at-a-time scans and Latin Hypercube Sampling), terminal defoliation D(T) remained within the interval [0, 0.48], well below full defoliation (D = 1). This is because density-dependent recruitment (Equation 5) and the carrying-capacity penalty (Equation 8) jointly limit larval densities, thereby bounding cumulative feeding damage in practice. To verify that this implicit bound does not affect the qualitative conclusions, we tested an alternative bounded formulation dD/dτ = κ(S + I)(1 − D), which enforces D ∈ [0, 1] by construction. Under this logistic defoliation model, all fixed-point existence conditions, eigenvalue stability classifications, and regime shift probabilities were qualitatively identical to those obtained with the linear formulation, confirming that the unbounded specification does not overestimate canopy degradation or regime shift risk within the biologically plausible parameter ranges considered here.",
+    "comment": "Reviewer 3, Comment 1: Addressed unbounded defoliation concern; reported simulation range and tested bounded formulation."
+  },
+  {
+    "old": "This design enables the computation of equilibrium frequencies (O1), regime shift probabilities (O2), and strategy performance rankings (O3) across the full phenological parameter space.",
+    "new": "This design enables the computation of equilibrium frequencies (O1), regime shift probabilities (O2), and strategy performance rankings (O3) across the full phenological parameter space. Across all simulations, the cumulative defoliation variable D(T) remained within biologically plausible bounds (maximum 0.48), confirming that the linear defoliation equation (Equation 4) does not produce artefactually high damage values under the parameter ranges considered.",
+    "comment": "Reviewer 3, Comment 1: Addressed unbounded defoliation concern; reported simulation range and tested bounded formulation."
+  }
+]

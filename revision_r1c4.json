@@ -1,0 +1,7 @@
+[
+  {
+    "old": "the annual fixed point loses its local attracting property.",
+    "new": "the annual fixed point loses its local attracting property. Because the model\u2019s long-term dynamics are governed by a discrete annual map rather than a continuous-time system, all bifurcation classifications are based on eigenvalues of the map Jacobian crossing the unit circle in the complex plane, not on eigenvalues crossing the imaginary axis as in continuous-time ODE theory (Kuznetsov, 2004; Elaydi, 2005). Within-season ODE pseudo-equilibria determine the seasonal trajectory but do not govern year-to-year stability; the latter depends entirely on the spectral properties of the annual return map. This discrete-time framing admits bifurcation types with no continuous-time analogue\u2014in particular, flip (period-doubling) bifurcation, in which a real eigenvalue crosses \u22121, produces biennial outbreak cycling that cannot arise in a purely continuous system.",
+    "comment": "Reviewer 1, Comment 4: Added explicit clarification of discrete vs continuous bifurcation formulations and their implications."
+  }
+]

@@ -1,0 +1,117 @@
+[
+  {
+    "old": "Figure 2 Equilibrium transition boundaries across all nine phenological scenarios and the pairwise \u03b2\u00d7Bt parameter plane. Panels A-I show equilibrium damage D* at the stable fixed point of the annual map as each phenological parameter is varied individually across its plausible range (one-at-a-time scans; all other parameters held at the calibrated baseline). Green squares: coexistence equilibria; pink circles: parasitoid-free equilibria; blue diamonds: canopy-only (beetle-free) equilibria; teal triangles: coexistence non-fixed-point attractors. Connecting lines trace the equilibrium branch within each class. The horizontal dotted line marks the functional damage threshold. (A) Season duration T. (B) Beetle overwinter survival  . (C) Parasitoid overwinter survival . (D) Parasitoid emergence rate \u03b4. (E) Susceptible larval mortality . (F) Passerine bird pressure index . (G) Damage-to-capacity penalty . (H) Parasitoid attack rate \u03b2. (I) Beetle annual reproduction ratio . Panel J shows the pairwise phase plane in the space; grey contours indicate  values and the bold black curve marks the  = 1 transcritical bifurcation boundary separating the coexistence regime (lower-right) from the parasitoid-free regime (upper-left). The diagonal orientation of this boundary reflects the intraguild predation mechanism: increasing bird pressure progressively raises the parasitoid attack rate required for parasitoid invasion.",
+    "new": "Figure 2: Equilibrium transition boundaries across all nine phenological scenarios (one-at-a-time scans). Panels A\u2013I show equilibrium damage D* at the stable fixed point of the annual map as each phenological parameter is varied individually across its plausible range (all other parameters held at the calibrated baseline). Green squares: coexistence equilibria; pink circles: parasitoid-free equilibria; blue diamonds: canopy-only (beetle-free) equilibria; teal triangles: coexistence non-fixed-point attractors. Connecting lines trace the equilibrium branch within each class. The horizontal dotted line marks the functional damage threshold. (A) Season duration T. (B) Beetle overwinter survival. (C) Parasitoid overwinter survival. (D) Parasitoid emergence rate \u03b4. (E) Susceptible larval mortality. (F) Passerine bird pressure index. (G) Damage-to-capacity penalty. (H) Parasitoid attack rate \u03b2. (I) Beetle annual reproduction ratio.\n\nFigure 3: Pairwise \u03b2\u00d7Bt parameter plane. Grey contours indicate R_P values and the bold black curve marks the R_P = 1 transcritical bifurcation boundary separating the coexistence regime (lower-right) from the parasitoid-free regime (upper-left). The diagonal orientation of this boundary reflects the intraguild predation mechanism: increasing bird pressure progressively raises the parasitoid attack rate required for parasitoid invasion.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered. Original Figure 2 caption split: Panels A\u2013I remain as Figure 2, Panel J becomes new Figure 3."
+  },
+  {
+    "old": "The phase plane illustrates how attack rate and bird predation influence equilibria (Figure 2J).",
+    "new": "The phase plane illustrates how attack rate and bird predation influence equilibria (Figure 3).",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 3: Parasitoid invasion threshold  as a function of each phenological parameter. Each panel shows  evaluated at the parasitoid-free fixed point of the annual map while varying one parameter across its plausible range (Table S1), with all other parameters held at the calibrated baseline. The dashed red line marks . Above this boundary, the parasitoid can invade and persist (coexistence regime); below it, the parasitoid declines to extinction (parasitoid-free regime). Vertical dotted lines indicate the approximate parameter value at which the threshold crossing occurs.",
+    "new": "Figure 4: Parasitoid invasion threshold  as a function of each phenological parameter. Each panel shows  evaluated at the parasitoid-free fixed point of the annual map while varying one parameter across its plausible range (Table S1), with all other parameters held at the calibrated baseline. The dashed red line marks . Above this boundary, the parasitoid can invade and persist (coexistence regime); below it, the parasitoid declines to extinction (parasitoid-free regime). Vertical dotted lines indicate the approximate parameter value at which the threshold crossing occurs.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 3 differs mathematically from Figure 2 by evaluating the parasitoid invasion threshold",
+    "new": "Figure 4 differs mathematically from Figure 2 by evaluating the parasitoid invasion threshold",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "If , a few parasitoids can spread and push the system to coexistence. If R_P < 1, they die out, and the system remains parasitoid-free. The  line marks where the main shift between these two states occurs. Seven of nine parameters cross the  threshold. Raising the bird pressure index  quickly lowers  and crosses the threshold. Increasing the susceptible larval death rate  also lowers  and crosses the threshold. Conversely, increasing the parasitoid attack rate \u03b2 raises  and crosses the threshold. Higher  increases  with persistence around the threshold value of  from Figure 2. Beetle overwinter survival  (Figure 3B), parasitoid overwinter survival  (Figure 3C) and increasing parasitoid emergence rate \u03b4 (Figure 3D) each raises . Each threshold crossing shows the parameter value needed for persistence. Season duration T (Figure 3A) increases , so longer seasons lower but do not eliminate parasitoid persistence at baseline. The defoliation damages memory-based vernal growth  (Figure 3G), which defines carrying capacity, slightly decreases . This shows that foliage-memory feedback has minimal impact on parasitoid invasion. Therefore, Figure 3 reveals that moving from coexisting equilibria by decreasing  results from a lower attack rate, reduced beetle or parasitoid survival, or slower emergence.",
+    "new": "If , a few parasitoids can spread and push the system to coexistence. If R_P < 1, they die out, and the system remains parasitoid-free. The  line marks where the main shift between these two states occurs. Seven of nine parameters cross the  threshold. Raising the bird pressure index  quickly lowers  and crosses the threshold. Increasing the susceptible larval death rate  also lowers  and crosses the threshold. Conversely, increasing the parasitoid attack rate \u03b2 raises  and crosses the threshold. Higher  increases  with persistence around the threshold value of  from Figure 2. Beetle overwinter survival  (Figure 4B), parasitoid overwinter survival  (Figure 4C) and increasing parasitoid emergence rate \u03b4 (Figure 4D) each raises . Each threshold crossing shows the parameter value needed for persistence. Season duration T (Figure 4A) increases , so longer seasons lower but do not eliminate parasitoid persistence at baseline. The defoliation damages memory-based vernal growth  (Figure 4G), which defines carrying capacity, slightly decreases . This shows that foliage-memory feedback has minimal impact on parasitoid invasion. Therefore, Figure 4 reveals that moving from coexisting equilibria by decreasing  results from a lower attack rate, reduced beetle or parasitoid survival, or slower emergence.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 4: Early-warning summary: parametric drivers, regime-shift probability, and adaptive-stability reference frame. (A) Partial rank correlation coefficients (PRCC) between each model parameter and the dominant eigenvalue magnitude \u03c1* across the Latin Hypercube sample; red bars indicate |PRCC| > 0.25 (warning candidates). (B) Regime-shift probability per phenological scenario (one-at-a-time variation) and for the joint Latin Hypercube sample; horizontal bars show 95% bootstrap confidence intervals; colour indicates risk level. (C) All one-at-a-time scan points projected onto the resistance\u2013resilience plane, where resistance =  and resilience = 1 \u2212 \u03c1* (contrast to van Meerbeek et al. (2021) resistance and resilience); green circles denote coexistence outcomes, red crosses denote regime shifts.",
+    "new": "Figure 5: Early-warning summary: parametric drivers, regime-shift probability, and adaptive-stability reference frame. (A) Partial rank correlation coefficients (PRCC) between each model parameter and the dominant eigenvalue magnitude \u03c1* across the Latin Hypercube sample; red bars indicate |PRCC| > 0.25 (warning candidates). (B) Regime-shift probability per phenological scenario (one-at-a-time variation) and for the joint Latin Hypercube sample; horizontal bars show 95% bootstrap confidence intervals; colour indicates risk level. (C) All one-at-a-time scan points projected onto the resistance\u2013resilience plane, where resistance =  and resilience = 1 \u2212 \u03c1* (contrast to van Meerbeek et al. (2021) resistance and resilience); green circles denote coexistence outcomes, red crosses denote regime shifts.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 4 quantifies regime-shift risk and highlights the main drivers of parametric instability\u2014variability in phenology (the timing of seasonal biological events). The partial rank correlation coefficient (PRCC) shows how sensitive system stability at coexistence is to each parameter. Stability is measured using the dominant eigenvalue magnitude \u03c1* (indicating how quickly the system returns to equilibrium after disturbance), based on the Latin Hypercube sample (Step 10) in Figure 4A.",
+    "new": "Figure 5 quantifies regime-shift risk and highlights the main drivers of parametric instability\u2014variability in phenology (the timing of seasonal biological events). The partial rank correlation coefficient (PRCC) shows how sensitive system stability at coexistence is to each parameter. Stability is measured using the dominant eigenvalue magnitude \u03c1* (indicating how quickly the system returns to equilibrium after disturbance), based on the Latin Hypercube sample (Step 10) in Figure 5A.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "while increasing  lowers stability. Next most influential are parasitoid conversion efficiency  (the efficiency with which parasitoids develop within hosts) and adult parasitoid mortality  (the death rate of adult parasitoids), indicating demographic sensitivity. Other parameters, which shift  in Figure 3, show moderate PRCC.",
+    "new": "while increasing  lowers stability. Next most influential are parasitoid conversion efficiency  (the efficiency with which parasitoids develop within hosts) and adult parasitoid mortality  (the death rate of adult parasitoids), indicating demographic sensitivity. Other parameters, which shift  in Figure 4, show moderate PRCC.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure4B displays the regime-shift probability for each phenological scenario as well as for joint Latin Hypercube sampling.",
+    "new": "Figure 5B displays the regime-shift probability for each phenological scenario as well as for joint Latin Hypercube sampling.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "However, in reality, season duration is linked to most phenologies; the figure 4B observation is most likely in the real world.",
+    "new": "However, in reality, season duration is linked to most phenologies; the Figure 5B observation is most likely in the real world.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "In contrast, bird pressure  and foliage-memory  do not induce regime shifts across sampling, similar to Figure 3, where, upon varying alone,  does not cross the  threshold from coexistence, and  has minimal impact on .",
+    "new": "In contrast, bird pressure  and foliage-memory  do not induce regime shifts across sampling, similar to Figure 4, where, upon varying alone,  does not cross the  threshold from coexistence, and  has minimal impact on .",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 4C projects all single-parameter scan points onto the resistance\u2013resilience plane.",
+    "new": "Figure 5C projects all single-parameter scan points onto the resistance\u2013resilience plane.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "which contrasts the resistance and resilience sensu van Meerbeek et al (2021) tested in later Figure 5.",
+    "new": "which contrasts the resistance and resilience sensu van Meerbeek et al (2021) tested in later Figure 6.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "followed by Figure 5 that shows how these parameter variability adapts resistance and resilience in the system.",
+    "new": "followed by Figure 6 that shows how these parameter variability adapts resistance and resilience in the system.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 5: Resistance (R1) and resilience (R2) across the six candidate early-warning parameters identified in Figures 3-4 and Table 1. (A) Season duration T. (B) Beetle overwinter survival . (C) Susceptible larval mortality . (D) Parasitoid attack rate \u03b2. (E) Beetle reproduction ratio . (F) Parasitoid overwinter survival . Background shading indicates the equilibrium regime (green: coexistence; pink: parasitoid-free; blue: canopy-only); dashed vertical lines mark transcritical bifurcation boundaries from Figure 2",
+    "new": "Figure 6: Resistance (R1) and resilience (R2) across the six candidate early-warning parameters identified in Figures 4\u20135 and Table 1. (A) Season duration T. (B) Beetle overwinter survival . (C) Susceptible larval mortality . (D) Parasitoid attack rate \u03b2. (E) Beetle reproduction ratio . (F) Parasitoid overwinter survival . Background shading indicates the equilibrium regime (green: coexistence; pink: parasitoid-free; blue: canopy-only); dashed vertical lines mark transcritical bifurcation boundaries from Figure 2",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 5 helps identify the distinct dynamics of resistance (R1) and resilience (R2) sensu Van Meerbeek (2021) across the six parameters identified as potential early warning signal detectors through their covariance.",
+    "new": "Figure 6 helps identify the distinct dynamics of resistance (R1) and resilience (R2) sensu Van Meerbeek (2021) across the six parameters identified as potential early warning signal detectors through their covariance.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 6: Optimal control allocation under three management scenarios. (A) Terminal within-season parasitoid augmentation rate . (B) Terminal within-season direct larval removal rate ; active only in Scenario C. (C) Annual mean control effort over the 8-year planning horizon: mean within-season parasitoid augmentation  (circles, solid), mean within-season direct removal  (squares, dashed), and annual bird habitat enhancement  (triangles, dotted).",
+    "new": "Figure 7: Optimal control allocation under three management scenarios. (A) Terminal within-season parasitoid augmentation rate . (B) Terminal within-season direct larval removal rate ; active only in Scenario C. (C) Annual mean control effort over the 8-year planning horizon: mean within-season parasitoid augmentation  (circles, solid), mean within-season direct removal  (squares, dashed), and annual bird habitat enhancement  (triangles, dotted).",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 6 shows how the timing and type of management affect cost savings in this eco-epidemic system to meet objective 3.",
+    "new": "Figure 7 shows how the timing and type of management affect cost savings in this eco-epidemic system to meet objective 3.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Strategy A relies solely on early parasitoid augmentation, i.e., the intentional release of parasitoid ( , Figure 6A) to maximise impact.",
+    "new": "Strategy A relies solely on early parasitoid augmentation, i.e., the intentional release of parasitoid ( , Figure 7A) to maximise impact.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "In contrast, Strategy C employs intensive early-season larval removal (Figure 6B), outperforming both parasitoid release and habitat improvements. Over multiple years (Figure 6C), effort allocation and cost trends diverge by strategy.",
+    "new": "In contrast, Strategy C employs intensive early-season larval removal (Figure 7B), outperforming both parasitoid release and habitat improvements. Over multiple years (Figure 7C), effort allocation and cost trends diverge by strategy.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 7: Multi-year state trajectories under three management scenarios. (A) Seasonal cumulative defoliation  and (B) carrying capacity  over the planning horizon. Dashed horizontal line in (A) marks the damage threshold .",
+    "new": "Figure 8: Multi-year state trajectories under three management scenarios. (A) Seasonal cumulative defoliation  and (B) carrying capacity  over the planning horizon. Dashed horizontal line in (A) marks the damage threshold .",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "Figure 7 presents multi-year ecological outcomes for each management strategy, beginning from an outbreak state.",
+    "new": "Figure 8 presents multi-year ecological outcomes for each management strategy, beginning from an outbreak state.",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  },
+  {
+    "old": "the cost ranking from Figure 6 matches the ecological trajectory",
+    "new": "the cost ranking from Figure 7 matches the ecological trajectory",
+    "comment": "Reviewer 1, Comment 2: Figure 2 split into two figures; subsequent figures renumbered."
+  }
+]

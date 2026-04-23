@@ -1,0 +1,10 @@
+scenario_key,scenario_name,scenario_value,winner_strategy
+T,Extended/shortened season length,65.0,C
+sigma_A,Reduced winter severity (beetle),0.9,C
+sigma_F,Reduced winter severity (parasitoid),0.7,C
+delta,Accelerated parasitoid development,0.25,C
+mu_S,Decreased susceptible larval mortality,0.003,C
+B_index,Variable bird predation pressure,2.0,C
+phi,Accumulated phytochemical defence,0.1,C
+beta,Variable parasitoid attack efficiency,0.005,C
+R_B,Variable beetle fecundity,6.0,C

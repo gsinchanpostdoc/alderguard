@@ -1,0 +1,10 @@
+parameter,phenological_scenario,climate_driver,baseline,range_low,range_high,direction
+T,Extended/shortened season length,Warmer/cooler spring-summer,55.0,45.0,65.0,either
+sigma_A,Reduced winter severity (beetle),Milder winters,0.85,0.5,0.9,increase
+sigma_F,Reduced winter severity (parasitoid),Milder winters,0.6,0.3,0.7,increase
+delta,Accelerated parasitoid development,Warmer within-season temperatures,0.18,0.05,0.25,increase
+mu_S,Decreased susceptible larval mortality,"Warmer, drier conditions",0.01,0.003,0.03,decrease
+B_index,Variable bird predation pressure,"Habitat structure, community composition, disturbance",1.0,0.5,2.0,either
+phi,Accumulated phytochemical defence,Repeated defoliation history,0.06,0.01,0.1,increase
+beta,Variable parasitoid attack efficiency,Temperature-dependent host-finding,0.02,0.005,0.04,either
+R_B,Variable beetle fecundity,"Overwinter condition, foliage quality",14.0,6.0,16.0,either

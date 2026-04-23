@@ -1,0 +1,144 @@
+/* AlderIPM-Sim Web — Print / PDF-friendly stylesheet */
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Hide interactive controls */
+  .main-tabs,
+  .btn,
+  .sim-toolbar,
+  .eq-toolbar button,
+  .ew-toolbar,
+  .ctrl-toolbar,
+  .params-actions,
+  .btn-reset-param,
+  .btn-reset-group,
+  input[type="range"],
+  input[type="file"] {
+    display: none !important;
+  }
+
+  /* Show all tab content */
+  .tab-content {
+    display: block !important;
+    padding: 0.5rem 0;
+    page-break-inside: avoid;
+  }
+
+  /* Add section headings for printed tabs */
+  #tab-parameters::before { content: "Parameters"; font-size: 14pt; font-weight: bold; display: block; margin-bottom: 0.5rem; border-bottom: 2pt solid #000; }
+  #tab-simulation::before { content: "Simulation Results"; font-size: 14pt; font-weight: bold; display: block; margin-bottom: 0.5rem; border-bottom: 2pt solid #000; }
+  #tab-equilibrium::before { content: "Equilibrium Analysis"; font-size: 14pt; font-weight: bold; display: block; margin-bottom: 0.5rem; border-bottom: 2pt solid #000; }
+  #tab-warnings::before { content: "Early Warning Signals"; font-size: 14pt; font-weight: bold; display: block; margin-bottom: 0.5rem; border-bottom: 2pt solid #000; }
+  #tab-control::before { content: "Control Comparison"; font-size: 14pt; font-weight: bold; display: block; margin-bottom: 0.5rem; border-bottom: 2pt solid #000; }
+  #tab-about::before { content: "About / Help"; font-size: 14pt; font-weight: bold; display: block; margin-bottom: 0.5rem; border-bottom: 2pt solid #000; }
+
+  /* Header */
+  header {
+    background: none !important;
+    color: #000;
+    box-shadow: none;
+    padding: 0.5rem 0;
+    border-bottom: 2pt solid #000;
+  }
+
+  header .header-logo path { fill: #000 !important; }
+  header .header-logo rect { fill: #555 !important; }
+  header .subtitle { opacity: 1; color: #333; }
+
+  /* Cards and surfaces */
+  .param-group,
+  .summary-card,
+  .about-section,
+  .ew-alert-box {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .param-group-header {
+    background: none !important;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Tables */
+  .eq-table {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .eq-table thead {
+    background: #eee !important;
+    color: #000;
+  }
+
+  .eq-table th, .eq-table td {
+    border: 1px solid #ccc;
+  }
+
+  /* Charts — let the browser render canvases as images */
+  .chart-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chart-cell {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    height: 250px;
+    page-break-inside: avoid;
+  }
+
+  /* Parameter values — show text instead of sliders */
+  .param-control-line {
+    justify-content: flex-end;
+  }
+
+  .param-slider-row input[type="range"] {
+    display: none;
+  }
+
+  /* Links */
+  a { color: #000; text-decoration: underline; }
+
+  /* Page breaks */
+  .param-group { page-break-inside: avoid; }
+  .about-section { page-break-inside: avoid; }
+
+  /* Layout */
+  .tab-content { max-width: 100%; }
+
+  /* Report-specific styles */
+  .recommendation {
+    background: #eee !important;
+    border: 1px solid #000;
+    padding: 8px;
+    margin: 8px 0;
+  }
+
+  .alert-box {
+    border: 1px solid #000 !important;
+    background: #fff !important;
+    padding: 8px;
+    margin: 8px 0;
+  }
+
+  .chart-cell svg {
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+  }
+
+  .header-meta {
+    font-size: 10pt;
+    color: #333;
+    margin-bottom: 12pt;
+  }
+
+  tr.changed { background: #eee !important; }
+  tr.stable td:first-child { border-left: 3px solid #000; }
+  tr.unstable td:first-child { border-left: 3px solid #666; }
+}

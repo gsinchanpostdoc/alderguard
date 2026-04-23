@@ -1,0 +1,4 @@
+parameter,phenological_scenario,prcc_rho_star,destabilising_direction
+mu_S,Decreased susceptible larval mortality,-0.2917745636254604,destabilising decrease
+mu_F,mu_F,-0.33988931838639674,destabilising decrease
+T,Extended/shortened season length,-0.2600696867540733,destabilising decrease

@@ -1,0 +1,17 @@
+[
+  {
+    "old": " is here annual beetle reproduction rate calculated from its fecundity. No parasitised larvae exist at season onset",
+    "new": " is here annual beetle reproduction rate calculated from its fecundity. The Beverton\u2013Holt form is adopted as the baseline because it produces compensatory density dependence: recruitment saturates monotonically at high adult density but never declines. For A. alni at the stand scale, larvae disperse across trees and total recruitment is regulated primarily by canopy availability (Kt) rather than by within-cohort interference on single branches; compensatory recruitment is therefore the more conservative default at the per-hectare spatial grain of this model. The alternative overcompensatory (Ricker) form, in which recruitment can decline at very high density, is examined as a structural robustness check in Section 2.5 and the results are reported below. No parasitised larvae exist at season onset",
+    "comment": "Reviewer 3, Comment 2: Added ecological rationale for Beverton-Holt recruitment and explicit Ricker comparison results."
+  },
+  {
+    "old": "and S \u2192 I compartmental parasitism versus direct parasitoid-induced mortality. If qualitative stability conclusions",
+    "new": "and S \u2192 I compartmental parasitism versus direct parasitoid-induced mortality. In particular, substituting Ricker recruitment S(0) = A exp(r(1 \u2212 A/K)) for the Beverton\u2013Holt baseline preserved all three qualitative conclusions (most probable equilibrium, regime shift probability >80%, and only Strategy C feasible), while introducing additional period-2 cycling near bifurcation boundaries that did not alter the dominant attractor identity. If qualitative stability conclusions",
+    "comment": "Reviewer 3, Comment 2: Added ecological rationale for Beverton-Holt recruitment and explicit Ricker comparison results."
+  },
+  {
+    "old": "interannual canopy damage, and diverse pest management. The main contribution is a comprehensive framework",
+    "new": "interannual canopy damage, and diverse pest management. Structural robustness analyses confirm that the three qualitative conclusions of this study\u2014the parasitoid-free equilibrium as the most probable regime, the regime shift probability exceeding 80%, and the integrated strategy (Strategy C) as the only feasible option\u2014are preserved when the Beverton\u2013Holt recruitment function in Equation (5) is replaced by the Ricker form S(0) = A exp(r(1 \u2212 A/K)). Under Ricker recruitment, additional period-2 oscillations appear near bifurcation boundaries owing to the overcompensatory decline in recruitment at high density, but these oscillations do not alter which equilibrium class dominates or the feasibility ranking of management strategies. The main contribution is a comprehensive framework",
+    "comment": "Reviewer 3, Comment 2: Added ecological rationale for Beverton-Holt recruitment and explicit Ricker comparison results."
+  }
+]
